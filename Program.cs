@@ -85,19 +85,24 @@ if (quantidadeNum != 0)
 Console.WriteLine("Qual jogo você quer procurar na sua biblioteca?");
 string jogoProcurar = Console.ReadLine();
 
+bool achado = false;
 
 for (int i = 0; i <= quantidadeJogos.Length; i++)
 {
-    if (jogoProcurar == quantidadeJogos[i])
+    try
     {
-        Console.WriteLine("Jogo encontrado!");
-        i = quantidadeJogos.Length;
-    }
-    else
-    {
-        if (jogoProcurar != quantidadeJogos.Length)
+        if (jogoProcurar == quantidadeJogos[i])
         {
-            Console.WriteLine("Jogo não encontrado");
+            Console.WriteLine("Jogo encontrado!");
+            i = quantidadeJogos.Length;
+
+            achado = true;
+
         }
+
+    }
+    catch
+    {
+            Console.WriteLine("Jogo não encontrado");
     }
 }
