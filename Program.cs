@@ -56,6 +56,8 @@
 
 // Nível 3
 
+using System.Threading.Channels;
+
 Console.WriteLine("Quantos jogos você tem?");
 int quantidadeNum = int.Parse(Console.ReadLine());
 
@@ -82,7 +84,7 @@ if (quantidadeNum != 0)
 
 // Nível 4
 
-Console.WriteLine("Qual jogo você quer procurar na sua biblioteca?");
+Console.WriteLine("Qual jogo você quer procurar na sua biblioteca? (Procure por nome)");
 string jogoProcurar = Console.ReadLine();
 
 bool achado = false;
@@ -106,3 +108,32 @@ for (int i = 0; i <= quantidadeJogos.Length; i++)
             Console.WriteLine("Jogo não encontrado");
     }
 }
+
+// Nível 5
+
+double somaTotal = 0;
+
+for (int i = 0; i < quantidadeJogos.Length; i++)
+{
+    Console.WriteLine($"Quanto você pagou no {quantidadeJogos[i]}?");
+    double custoJogos = double.Parse(Console.ReadLine());
+    somaTotal = somaTotal + custoJogos;
+}
+
+double mediaCompra = somaTotal / quantidadeJogos.Length;
+string clienteVIP = "";
+if (somaTotal >= 500)
+{
+    clienteVIP = "Cliente VIP!";
+}
+else
+{
+    clienteVIP = "Cliente Comum, faltam " + (500 - somaTotal) + " para se tornar um cliente VIP";
+}
+
+Console.WriteLine("Total Gasto: " + somaTotal);
+Console.WriteLine("Média por compra: " + mediaCompra);
+Console.WriteLine("Status: " + clienteVIP);
+
+// Nível 6
+
