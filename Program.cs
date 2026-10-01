@@ -1,0 +1,103 @@
+﻿////Cadastro do cliente. 
+
+
+//string nome = "";
+//string nickname = "";
+//int cliente = 0;
+//double saldo = 0;
+//string plataforma = "";
+
+//Console.WriteLine("Digite seu nome");
+//nome = Console.ReadLine();
+//Console.WriteLine("Digite o seu nickname:");
+//nickname = Console.ReadLine();
+//Console.WriteLine("Digite o ano que você virou cliente");
+//cliente = int.Parse(Console.ReadLine());
+
+//Console.WriteLine("Digitei o seu saldo: ");
+//saldo = double.Parse(Console.ReadLine());
+
+//Console.WriteLine("Qual plataforma você usa?");
+//plataforma = Console.ReadLine();
+
+//Console.WriteLine("=== Ficha Cliente ===");
+//Console.WriteLine($"Nome: {nome}");
+//Console.WriteLine($"Nickname: {nickname}");
+//Console.WriteLine($"Saldo: {saldo}");
+//Console.WriteLine($"Plataforma: {plataforma}");
+//Console.WriteLine($"Que ano virou cliente: {cliente}\n");
+
+//// Nível 2
+
+//Console.WriteLine("Qual o nome do jogo?");
+//string jogo = Console.ReadLine();
+
+//Console.WriteLine("Qual a Plataforma desse jogo?");
+//string plataforma1 = Console.ReadLine();
+
+//Console.WriteLine("Qual o preço desse jogo?\n");
+//double preço = double.Parse(Console.ReadLine());
+
+//double precorestante = saldo - preço;
+
+//if (plataforma1 == plataforma && saldo >= preço)
+//{
+//    Console.WriteLine($"Preço do jogo: {preço}");
+//    Console.WriteLine($"Nome do jogo: {jogo}");
+//    Console.WriteLine($"Plataforma do jogo: {plataforma}");
+//    Console.WriteLine($"Saldo que vai sobrar: {precorestante}");
+//}
+//else
+//{
+//    Console.WriteLine("Não pode comprar");
+
+//}
+
+
+// Nível 3
+
+Console.WriteLine("Quantos jogos você tem?");
+int quantidadeNum = int.Parse(Console.ReadLine());
+
+string[] quantidadeJogos = new string[quantidadeNum];
+
+if (quantidadeNum != 0)
+{
+    for (int i = 0; i < quantidadeNum; i++)
+    {
+        Console.WriteLine("Digite o nome de um dos seus jogos: ");
+        quantidadeJogos[i] = Console.ReadLine();
+
+    }
+
+    Console.WriteLine("=== Biblioteca de Jogos ===");
+
+    for (int i = 0; i < quantidadeJogos.Length; i++)
+    {
+
+        Console.WriteLine($"{i + 1} - {quantidadeJogos[i]}");
+
+    }
+}
+
+// Nível 4
+
+Console.WriteLine("Qual jogo você quer procurar na sua biblioteca?");
+string jogoProcurar = Console.ReadLine();
+
+
+for (int i = 0; i <= quantidadeJogos.Length; i++)
+{
+    if (jogoProcurar == quantidadeJogos[i])
+    {
+        Console.WriteLine("Jogo encontrado!");
+        i = quantidadeJogos.Length;
+    }
+    else
+    {
+        if (jogoProcurar != quantidadeJogos.Length)
+        {
+            Console.WriteLine("Jogo não encontrado");
+        }
+    }
+}
